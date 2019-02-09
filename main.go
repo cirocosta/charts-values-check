@@ -32,7 +32,6 @@ func main() {
 		fmt.Fprintf(os.Stderr, "unknown file type %s - possible values: readme | values",
 			*fileType)
 		os.Exit(1)
-
 	}
 
 	file, err := os.Open(*filepath)
