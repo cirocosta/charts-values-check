@@ -39,6 +39,12 @@ func discoverKeyPaths(k string, v interface{}) (res []string) {
 	}
 
 	value := v.(map[interface{}]interface{})
+
+	if len(value) == 0 {
+		res = []string{k}
+		return
+	}
+
 	for innerKey, innerValue := range value {
 		paths := discoverKeyPaths(innerKey.(string), innerValue)
 

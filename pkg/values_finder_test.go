@@ -38,6 +38,16 @@ func TestValuesFinder(t *testing.T) {
 			input:    `foo: null`,
 			expected: []string{"foo"},
 		},
+		{
+			desc:     "single empty map",
+			input:    `foo: {}`,
+			expected: []string{"foo"},
+		},
+		{
+			desc:     "single empty array",
+			input:    `foo: []`,
+			expected: []string{"foo"},
+		},
 	}
 
 	var (
